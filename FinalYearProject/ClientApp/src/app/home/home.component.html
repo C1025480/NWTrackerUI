@@ -4,6 +4,39 @@
   <title>NWTracker</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <link rel="stylesheet" href="home.component.css">
 </head>
 <h1 class="Title"> NW Tracker</h1>
-<h2> Select Your Project: </h2>
+<!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.date }}</td>
+    </tr>
+  </tbody>
+</table>-->
+<table class='Project-Table'>
+  <thead>
+    <tr>
+      <th class='Table-Name'>Available Projects</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class='New-Project-Button'>
+      <button type="button" class='CreateNewProjectButton'>Create New Project</button>
+    </tr>
+    <tr class='Project-Name'>
+      <td>Project1</td>
+    </tr>
+    <tr class='Project-Name'>
+      <td>Project2</td>
+    </tr>
+    <tr class='Project-Name'>
+      <td>Project3</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,4 +1,47 @@
 .Title {
-    padding-top: 50px;
-    text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.Project-Table {
+  border: 3px solid;
+  border-radius: 15px;
+  width: 60%;
+  margin-left: 20%;
+  align-content: center;
+  text-align: center;
+  background-color: mediumpurple;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.Project-Name {
+  display: grid;
+  color: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: larger;
+  border-top: solid 3px black;
+  border-radius: 5px;
+}
+
+.Table-Name {
+  font-size: x-large;
+  padding: 10px;
+  border-bottom: solid 3px black;
+  border-radius: 5px;
+}
+
+.New-Project-Button {
+  padding: 15px;
+  justify-items:center;
+}
+
+.CreateNewProjectButton {
+  width: 30%;
+  margin: 15px;
+  height: 40px;
+  border-radius: 20px;
+
 }

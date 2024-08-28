@@ -6,37 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <link rel="stylesheet" href="home.component.css">
 </head>
-<h1 class="Title"> NW Tracker</h1>
-<!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
-  <thead>
-    <tr>
-      <th>Project</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-    </tr>
-  </tbody>
-</table>-->
-<table class='Project-Table'>
-  <thead>
-    <tr>
-      <th class='Table-Name'>Available Projects</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class='New-Project-Button'>
-      <button type="button" class='CreateNewProjectButton'>Create New Project</button>
-    </tr>
-    <tr class='Project-Name'>
-      <td>Project1</td>
-    </tr>
-    <tr class='Project-Name'>
-      <td>Project2</td>
-    </tr>
-    <tr class='Project-Name'>
-      <td>Project3</td>
-    </tr>
-  </tbody>
-</table>
+<body>
+  <h1 class="Title"> NW Tracker</h1>
+  <p *ngIf="!Projects"><em>Loading...</em></p>
+  <table class='Project-Table' *ngIf="Projects && Projects.length">
+    <thead>
+      <tr>
+        <th class='Table-Name'>Available Projects</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <form (submit)="onSubmit(projectName.value)">
+            <label for="lname">Project Name:</label>
+            <input type="text" id="projectName" name="projectName" #projectName required /><br /><br />
+            <input type="submit" value="Create New Project" class="CreateNewProjectButton" />
+          </form>
+        </td>
+      </tr>
+
+    </tbody>
+    <tbody *ngFor="let project of Projects">
+      <a class="nav-link text-dark" [routerLink]="['/project-page']">{{ project.projectName }}</a>
+    </tbody>
+  </table>

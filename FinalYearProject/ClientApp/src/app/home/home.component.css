@@ -1,4 +1,95 @@
 .Title {
-    padding-top: 50px;
-    text-align: center;
+  width: 100%;
+  background-color: #653E85;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  margin-bottom: 20px;
+}
+form {
+  width: 90%;
+  border-top: 4px solid #653E85;
+  border-left: 4px solid #653E85;
+  border-right: 4px solid #653E85;
+  text-align: center;
+  padding: 20px;
+}
+form input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Project-Table {
+  width: 90%;
+  border: 4px solid #653E85;
+  text-align: center;
+  table-layout: fixed;
+}
+thead {
+  border: 4px solid #653E85;
+  padding: 10px;
+}
+tr {
+  border: 4px solid #653E85;
+}
+td{
+    padding:10px;
+}
+.Title-Row {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pagination-controls {
+  text-align: center;
+  padding: 20px;
+}
+label{
+    font-weight: bold;
+}
+.Link-Buttons {
+  width: 200px;
+  padding: 5px;
+}
+.Delete-Button {
+    width: 100px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.Project-Name-td{
+  font-weight: bold;
+  width:200px;
+}
+.pagination-controls {
+  border: 4px solid #653E85;
+  padding:10px;
+  margin:15px;
+  border-radius: 5px;
+}
+.button {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #653E85;
+  border: 1px #653E85 solid;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #4E2E6B;
 }

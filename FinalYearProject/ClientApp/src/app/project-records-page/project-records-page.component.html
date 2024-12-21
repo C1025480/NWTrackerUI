@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>NWTracker Project Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <link rel="stylesheet" href="project-records-page.component.css">
+</head>
+<body>
+
+  <h1 class="Title"> {{ projectName }} Records </h1>
+
+  <table class='Project-Table' *ngIf="paginatedRecords.length > 0">
+    <thead>
+      <tr class="Title-Row">
+        <td> ID </td>
+        <td> UPRN </td>
+        <td> Status </td>
+        <td> House Number </td>
+        <td> Street </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Record of paginatedRecords">
+        <td>{{ Record.tT_PK }}</td>
+        <td>{{ Record.tT_UPRN }}</td>
+        <td>{{ Record.tT_STATUS }}</td>
+        <td>{{ Record.tT_HOUSE_NUMBER }}</td>
+        <td>{{ Record.tT_STREET }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="paginatedRecords.length === 0">No records found</p>
+
+  <div class="pagination-controls" *ngIf="totalPages > 1">
+    <button class="button" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{currentPage}} of {{totalPages}}</span>
+    <button class="button" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</body>
+</html>

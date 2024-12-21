@@ -1,53 +1,95 @@
 .Title {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  width: 100%;
+  background-color: #653E85;
   text-align: center;
+  padding: 15px;
+  color: white;
+  margin-bottom: 20px;
+}
+form {
+  width: 90%;
+  border-top: 4px solid #653E85;
+  border-left: 4px solid #653E85;
+  border-right: 4px solid #653E85;
+  text-align: center;
+  padding: 20px;
+}
+form input {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .Project-Table {
-  border: 3px solid;
-  border-radius: 15px;
-  width: 60%;
-  margin-left: 20%;
-  align-content: center;
+  width: 90%;
+  border: 4px solid #653E85;
   text-align: center;
-  background-color: mediumpurple;
-  border-collapse: separate;
-  border-spacing: 0;
+  table-layout: fixed;
 }
-
-.Project-Name {
-  display: grid;
-  color: black;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: larger;
-  border-top: solid 3px black;
-  border-radius: 5px;
-}
-
-.Table-Name {
-  font-size: x-large;
+thead {
+  border: 4px solid #653E85;
   padding: 10px;
-  border-bottom: solid 3px black;
+}
+tr {
+  border: 4px solid #653E85;
+}
+td{
+    padding:10px;
+}
+.Title-Row {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pagination-controls {
+  text-align: center;
+  padding: 20px;
+}
+label{
+    font-weight: bold;
+}
+.Link-Buttons {
+  width: 200px;
+  padding: 5px;
+}
+.Delete-Button {
+    width: 100px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.Project-Name-td{
+  font-weight: bold;
+  width:200px;
+}
+.pagination-controls {
+  border: 4px solid #653E85;
+  padding:10px;
+  margin:15px;
+  border-radius: 5px;
+}
+.button {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #653E85;
+  border: 1px #653E85 solid;
+  color: white;
+  padding: 5px;
   border-radius: 5px;
 }
 
-.New-Project-Button {
-  padding: 15px;
-  justify-items:center;
-}
-
-.CreateNewProjectButton {
-  width: 30%;
-  margin: 15px;
-  height: 40px;
-  border-radius: 20px;
-
-}
-.EnterProjectButton {
-  width: 20%;
-  margin: 10px;
-  height: 30px;
-  border-radius: 20px;
+.button:hover {
+    background-color: #4E2E6B;
 }

@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +8,31 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   public Projects: Projects[] | null = null;
+  public paginatedProjects: Projects[] = [];
+  public currentPage: number = 1;
+  public pageSize: number = 10;
+  public totalPages: number = 0;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
 
   ngOnInit() {
     this.http.get<{ value: Projects[] }>('https://localhost:7199/GetProjects').subscribe(result => {
       this.Projects = result.value;
+      this.totalPages = this.Projects ? Math.ceil(this.Projects.length / this.pageSize) : 0;
+      this.updatePaginatedProjects();
     }, error => console.error(error));
   }
 
+  updatePaginatedProjects() {
+    if (this.Projects) {
+      const startIndex = (this.currentPage - 1) * this.pageSize;
+      const endIndex = startIndex + this.pageSize;
+      this.paginatedProjects = this.Projects.slice(startIndex, endIndex);
+    }
+  }
+
   createProject(projectName: string) {
-    const body = { ProjectName: projectName };
+    const body = { projectName };
 
     this.http.post('https://localhost:7199/NewProject', body, {
       headers: { 'Content-Type': 'application/json' }
@@ -34,6 +48,20 @@ export class HomeComponent implements OnInit {
   onSubmit(projectName: string) {
     console.log(projectName);
     this.createProject(projectName);
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.updatePaginatedProjects();
+    }
+  }
+
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePaginatedProjects();
+    }
   }
 }
 

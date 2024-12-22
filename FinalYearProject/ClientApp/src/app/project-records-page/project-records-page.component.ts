@@ -13,7 +13,7 @@ export class ProjectRecordsPageComponent implements OnInit {
   public Records: Record[] = [];
   public paginatedRecords: Record[] = [];
   public currentPage: number = 1;
-  public pageSize: number = 25;
+  public pageSize: number = 5;
   public totalPages: number = 0;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }

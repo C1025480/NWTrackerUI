@@ -21,7 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let Record of paginatedRecords">
+      <tr *ngFor="let Record of paginatedRecords" [routerLink]="['/record-edit-page']" [queryParams]="{ RecordPK: Record.tT_PK, Project_PK: this.projectPK, project_Name: this.projectName }">
         <td>{{ Record.tT_PK }}</td>
         <td>{{ Record.tT_UPRN }}</td>
         <td>{{ Record.tT_STATUS }}</td>
@@ -33,10 +33,13 @@
 
   <p *ngIf="paginatedRecords.length === 0">No records found</p>
 
-  <div class="pagination-controls" *ngIf="totalPages > 1">
-    <button class="button" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
-    <span>Page {{currentPage}} of {{totalPages}}</span>
-    <button class="button" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  <div class="pagination-container">
+    <button class="button left-button" [routerLink]="['/']" >Go Back</button>
+    <div class="pagination-controls" *ngIf="totalPages > 1">
+      <button class="button" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{currentPage}} of {{totalPages}}</span>
+      <button class="button" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
   </div>
 </body>
 </html>

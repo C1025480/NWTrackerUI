@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>NWTracker Project Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <link rel="stylesheet" href="record-edit-page.component.css">
+</head>
+<body>
+
+  <h1 class="Title"> Record Edit Page: {{ RecordPK }} </h1>
+
+    <div *ngIf="Tracker" class="tracker-data">
+    <h2>Tracker Details</h2>
+    <ul>
+      <li><strong>Tracker PK:</strong> {{ Tracker.tT_PK }}</li>
+      <li><strong>NW FK:</strong> {{ Tracker.tT_NW_FK }}</li>
+      <li><strong>DPIRFC:</strong> {{ Tracker.tT_DPIRFC }}</li>
+      <li><strong>UPRN:</strong> {{ Tracker.tT_UPRN }}</li>
+      <li><strong>Priority Order:</strong> {{ Tracker.tT_PRIORITY_ORDER }}</li>
+      <li><strong>Status:</strong> {{ Tracker.tT_STATUS }}</li>
+      <li><strong>Notes:</strong> {{ Tracker.tT_NOTES }}</li>
+      <li><strong>House Number:</strong> {{ Tracker.tT_HOUSE_NUMBER }}</li>
+      <li><strong>Street:</strong> {{ Tracker.tT_STREET }}</li>
+      <li><strong>Comments:</strong> {{ Tracker.tT_COMMENTS }}</li>
+      <li><strong>Lintel Works Required:</strong> {{ Tracker.tT_LINTEL_WORKS_REQUIRED}}</li>
+      <li><strong>Access Equipment Required:</strong> {{ Tracker.tT_ACCESS_EQUIPMENT_REQUIRED }}</li>
+      <li><strong>Property Construction Type:</strong> {{ Tracker.tT_PROPERTY_CONSTRUCTION_TYPE }}</li>
+      <li><strong>Survey Identified Comments:</strong> {{ Tracker.tT_SURVEY_IDENTIFIED_COMMENTS }}</li>
+      <li><strong>Call Off Number:</strong> {{ Tracker.tT_CALL_OFF_NUMBER }}</li>
+      <li><strong>Called Off Date:</strong> {{ Tracker.tT_CALLED_OFF_DATE | date }}</li>
+      <li><strong>Delivery Date:</strong> {{ Tracker.tT_DELIVERY_DATE | date }}</li>
+      <li><strong>Delivery Point:</strong> {{ Tracker.tT_DELIVERY_POINT }}</li>
+      <li><strong>Delivery Note Received:</strong> {{ Tracker.tT_DELIVERY_NOTE_RECEIVED }}</li>
+      <li><strong>Scheduled Fitting Date:</strong> {{ Tracker.tT_SCHEDULED_FITTING_DATE | date }}</li>
+      <li><strong>AM or PM Appointment:</strong> {{ Tracker.tT_AMORPMAPPOINTMENT }}</li>
+      <li><strong>Route March Order:</strong> {{ Tracker.tT_ROUTE_MARCH_ORDER }}</li>
+      <li><strong>Install Access Attempts:</strong> {{ Tracker.tT_INSTALL_ACCESS_ATTEMPTS }}</li>
+      <li><strong>Primary Installer:</strong> {{ Tracker.tT_PRIMARY_INSTALLER }}</li>
+      <li><strong>Secondary Installer:</strong> {{ Tracker.tT_SECONDARY_INSTALLER }}</li>
+      <li><strong>Installation Related Comments:</strong> {{ Tracker.tT_INSTALLATION_RELATED_COMMENTS }}</li>
+      <li><strong>Installation Sheet Received:</strong> {{ Tracker.tT_INSTALLATION_SHEET_RECEIVED}}</li>
+      <li><strong>Variation Details:</strong> {{ Tracker.tT_VARIATION_DETAILS }}</li>
+      <li><strong>Variation Order Number:</strong> {{ Tracker.tT_VARIATION_ORDER_NUMBER }}</li>
+      <li><strong>Date Handed Over:</strong> {{ Tracker.tT_DATE_HANDED_OVER | date }}</li>
+      <li><strong>Inspected By:</strong> {{ Tracker.tT_INSPECTED_BY }}</li>
+      <li><strong>Install Wages Applied For:</strong> {{ Tracker.tT_INSTALL_WAGES_APPLIED_FOR }}</li>
+      <li><strong>Lease Holder House Number:</strong> {{ Tracker.tT_LEASE_HOLDER_HOUSE_NUMBER }}</li>
+      <li><strong>Lease Holder Street:</strong> {{ Tracker.tT_LEASE_HOLDER_STREET }}</li>
+      <li><strong>Lease Holder Town:</strong> {{ Tracker.leasE_HOLDER_TOWN }}</li>
+      <li><strong>Lease Holder Country:</strong> {{ Tracker.leasE_HOLDER_COUNTRY }}</li>
+      <li><strong>Lease Holder Postcode:</strong> {{ Tracker.leasE_HOLDER_POSTCODE }}</li>
+      <li><strong>Lease Holder Name:</strong> {{ Tracker.leasE_HOLDER_NAME }}</li>
+      <li><strong>Lease Holder Primary Phone:</strong> {{ Tracker.leasE_HOLDER_PRIMARY_PHONE }}</li>
+      <li><strong>Lease Holder Secondary Phone:</strong> {{ Tracker.leasE_HOLDER_SECONDARY_PHONE }}</li>
+      <li><strong>Lease Holder Email:</strong> {{ Tracker.leasE_HOLDER_EMAIL }}</li>
+    </ul>
+  </div>
+
+
+  <button class="button left-button" [routerLink]="['/project-records-page']" [queryParams]="{ projectName: this.Project_Name, nW_PK: this.Project_PK }">Go Back</button>
+</body>
+</html>

@@ -83,3 +83,7 @@ tbody tr:hover {
   .left-button:hover {
     background-color: #4E2E6B;
   }
+
+.Delete-Button {
+  width: 100px;
+}

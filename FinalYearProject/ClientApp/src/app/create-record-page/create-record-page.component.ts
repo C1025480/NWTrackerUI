@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './record-edit-page.component.html',
   styleUrls: ['./record-edit-page.component.css']
 })
-export class RecordEditPageComponent implements OnInit {
+export class CreateRecordPageComponent implements OnInit {
   RecordPK: string | null = '';
   Project_PK: string | null = '';
   Project_Name: string | null = '';

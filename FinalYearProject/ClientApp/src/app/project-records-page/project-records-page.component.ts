@@ -37,8 +37,6 @@ export class ProjectRecordsPageComponent implements OnInit {
       const startIndex = (this.currentPage - 1) * this.pageSize;
       const endIndex = startIndex + this.pageSize;
       this.paginatedRecords = this.Records.slice(startIndex, endIndex);
-      console.log("hi")
-      console.log(this.paginatedRecords)
     }
   }
 
@@ -55,6 +53,21 @@ export class ProjectRecordsPageComponent implements OnInit {
       this.updatePaginatedTrackerRecords();
     }
   }
+
+  DeleteRecord(TrackerRecordPK: number) {
+    const url = `https://localhost:7199/DeleteTrackerRecord?TrackerRecordPK=${TrackerRecordPK}`;
+
+    this.http.post(url, null).subscribe(
+      (response) => {
+        console.log('Record Deleted successfully', response);
+        location.reload()
+      },
+      (error) => {
+        console.error('Error Deleting Record', error);
+      }
+    );
+  }
+
 }
 
 interface Record {

@@ -63,8 +63,16 @@ label{
   width: 200px;
   padding: 5px;
 }
+  .Link-Buttons :hover {
+    cursor: pointer;
+    background-color: #ddd;
+  }
 .Delete-Button {
     width: 100px;
+}
+.Delete-Button :hover {
+  cursor: pointer;
+  background-color:#ddd;
 }
 a {
   text-decoration: none;

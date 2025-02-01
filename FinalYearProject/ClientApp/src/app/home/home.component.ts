@@ -31,6 +31,25 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  DeleteRecord(project: Projects) {
+    const body = {
+      nW_PK: project.nW_PK,
+      projectName: project.projectName
+    };
+
+    console.log(JSON.stringify(body));
+
+    this.http.post('https://localhost:7199/DeleteProject', body, {
+      headers: { 'Content-Type': 'application/json' }
+    }).subscribe(
+      response => {
+        console.log('Project Deleted successfully', response);
+        location.reload();
+      },
+      error => console.log('Error Deleting project', error)
+    );
+  }
+
   createProject(projectName: string) {
     const body = { projectName };
 

@@ -5,12 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <link rel="stylesheet" href="project-records-page.component.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
 
   <h1 class="Title"> {{ projectName }} Records </h1>
 
-  <table class='Project-Table' *ngIf="paginatedRecords.length > 0">
+  <table class="Project-Table" *ngIf="paginatedRecords.length > 0">
     <thead>
       <tr class="Title-Row">
         <td> ID </td>
@@ -18,23 +19,31 @@
         <td> Status </td>
         <td> House Number </td>
         <td> Street </td>
+        <td> Delete Project </td>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let Record of paginatedRecords" [routerLink]="['/record-edit-page']" [queryParams]="{ RecordPK: Record.tT_PK, Project_PK: this.projectPK, project_Name: this.projectName }">
+      <tr *ngFor="let Record of paginatedRecords"
+          [routerLink]="['/record-edit-page']"
+          [queryParams]="{ RecordPK: Record.tT_PK, Project_PK: this.projectPK, project_Name: this.projectName }">
         <td>{{ Record.tT_PK }}</td>
         <td>{{ Record.tT_UPRN }}</td>
         <td>{{ Record.tT_STATUS }}</td>
         <td>{{ Record.tT_HOUSE_NUMBER }}</td>
         <td>{{ Record.tT_STREET }}</td>
+        <td class="Delete-Button"
+            (click)="DeleteRecord(Record.tT_PK); $event.stopPropagation()">
+          <i class="bi bi-trash"></i>
+        </td>
       </tr>
     </tbody>
   </table>
 
+
   <p *ngIf="paginatedRecords.length === 0">No records found</p>
 
   <div class="pagination-container">
-    <button class="button left-button" [routerLink]="['/']" >Go Back</button>
+    <button class="button left-button" [routerLink]="['/']">Go Back</button>
     <div class="pagination-controls" *ngIf="totalPages > 1">
       <button class="button" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
       <span>Page {{currentPage}} of {{totalPages}}</span>

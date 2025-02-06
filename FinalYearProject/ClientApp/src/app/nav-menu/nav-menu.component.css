@@ -1,22 +1,120 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
 html {
   font-size: 14px;
+  background-color: #989898;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
 
+.navbar {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  font-size: 32px;
+  padding-left: 20px;
+  color: white;
+}
+  a.navbar-brand:hover {
+    color: rebeccapurple !important;
+  }
+
+.clock {
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 24px;
+}
+
+.bi {
+  font-size: 30px;
+}
+
+.bi-inbox,
+.bi-person-circle,
+.bi-gear {
+  font-size: 30px;
+  color: white;
+}
+
+  .bi-gear:hover {
+    color: rebeccapurple !important;
+  }
+  .bi-inbox:hover {
+    color: rebeccapurple !important;
+  }
+
+.nav-item {
+  padding: 10px;
+}
+.nav-time {
+  color: white !important;
+  font-size: 24px;
+}
+
+.nav-link:hover {
+  color: rebeccapurple !important;
+}
+
+
+
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 .NW {
-    font-weight: 1000;
+  font-weight: 1000;
+}
+
+.container-fluid {
+  height: 80px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.bg-white {
+  background-color: #989898 !important;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+.container {
+  padding: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.right-side{
+    color: white;
+}
+.ProjectSelected{
+    padding-left: 60px;
+    font-size: 24px;
+}
+.Project {
+  font-size: 18px;
+  background-color: #494949;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 200px;
+  margin-left: 10px;
 }

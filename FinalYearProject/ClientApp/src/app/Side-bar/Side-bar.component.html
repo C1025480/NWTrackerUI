@@ -2,18 +2,20 @@
   <div class="sidebar">
     <span class="section-heading">Tracker</span>
 
-    <a href="#home">Client Tracker</a>
-    <a href="#news">Financial Summary</a>
-    <a href="#contact">Project Gantt</a>
-    <a href="#about">Data Collection</a>
-    <a href="#about">Surveys</a>
-    <a href="#about">Installs</a>
-    <a href="#about"  style=" border-bottom: 1px solid black;">Report</a>
+    <a href="#home" style="margin-top:10px;" [routerLink]="['/project-records-page']" [queryParams]="{ projectName: ProjectName, nW_PK: ProjectPK }">Client Tracker</a>
+    <a href="#news" [routerLink]="['/Financial-Summary']">Financial Summary</a>
+    <a href="#about" [routerLink]="['/Record-Import']">Record Import</a>
+    <a href="#contact" [routerLink]="['/Project-Gantt']">Project Gantt</a>
+    <a href="#about" [routerLink]="['/Data-Collection']">Data Collection</a>
+    <a href="#about" [routerLink]="['/Surveys']">Surveys</a>
+    <a href="#about" [routerLink]="['/Installs']">Installs</a>
+    <a href="#about" style="margin-bottom:10px; border-bottom: 1px solid black;" [routerLink]="['/Report']">Report</a>
+
 
     <span class="section-heading">Admin</span>
 
-    <a href="#about">Project Management</a>
-    <a href="#about">Profile Management</a>
+    <a href="#about" style="margin-top:10px;" [routerLink]="['/Project-Management']">Project Management</a>
+    <a href="#about" [routerLink]="['/Settings']">Profile Management</a>
 
   </div>
 </header>

@@ -9,6 +9,8 @@ export class NavMenuComponent implements OnInit, OnDestroy {
   isExpanded = false;
   currentTime: string = '';
 
+  public ProjectName: string = "Not Selected";
+
   private timer: any;
 
   collapse() {
@@ -36,6 +38,8 @@ export class NavMenuComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.updateClock();
     this.timer = setInterval(() => this.updateClock(), 1000);
+    const selectedProjectName = localStorage.getItem("SelectedProjectName");
+    this.ProjectName = selectedProjectName ? selectedProjectName : "Not Selected";
   }
 
   ngOnDestroy(): void {

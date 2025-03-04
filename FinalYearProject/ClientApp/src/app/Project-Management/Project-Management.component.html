@@ -4,11 +4,11 @@
   <title>NWTracker</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-  <link rel="stylesheet" href="home.component.css">
+  <link rel="stylesheet" href="Project-Management.component.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body style=" margin-left: 300px;">
-  <h1 class="Title">Projects</h1>
+  <h1 class="Title">Project Management</h1>
   <p *ngIf="!Projects"><em>Loading...</em></p>
     <form (submit)="onSubmit(projectName.value)">
       <label for="lname">Project Name:</label>
@@ -18,13 +18,8 @@
   <table class='Project-Table' *ngIf="paginatedProjects && paginatedProjects.length">
     <tr class="Title-Row">
       <td> Project Name </td>
-      <td> Records </td>
-      <td> Data Collection </td>
-      <td> Surveys Booked </td>
-      <td> Installs Booked </td>
-      <td> Summary Report </td>
-      <td> Financial Summary </td>
-      <td> Program </td>
+      <td> Select Project </td>
+      <td> Rename Project </td>
       <td> Delete Project </td>
     </tr>
     <tbody *ngFor="let project of paginatedProjects">
@@ -32,16 +27,11 @@
         <td class="Project-Name-td">
           {{ project.projectName }}
         <td class="Link-Buttons">
-            <a [routerLink]="['/project-records-page']" [queryParams]="{ projectName: project.projectName, nW_PK: project.nW_PK }">
-              {{ project.projectName }}  <br /> Records
-            </a>
+          <button id="ProjectSelectButton" (click)="selectProject(project)">
+            Select {{ project.projectName }}
+          </button>
         </td>
-        <td class="Link-Buttons"><a> {{ project.projectName }}  <br /> Data </a> </td>
-        <td class="Link-Buttons"><a> {{ project.projectName }}  <br /> Surveys </a> </td>
-        <td class="Link-Buttons"><a> {{ project.projectName }}  <br /> Installs </a> </td>
-        <td class="Link-Buttons"><a> {{ project.projectName }}  <br /> Report </a> </td>
-        <td class="Link-Buttons"><a> {{ project.projectName }}  <br /> Summary </a> </td>
-        <td class="Link-Buttons"><a> {{ project.projectName }}  <br /> Program </a> </td>
+        <td class="Link-Buttons"><input type="text" id="Rename" name="Rename"> </td>
         <td class="Delete-Button" (click)="DeleteRecord(project)">
           <i class="bi bi-trash"></i>
         </td>

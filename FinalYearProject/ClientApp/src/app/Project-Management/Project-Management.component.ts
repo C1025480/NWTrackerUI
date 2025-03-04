@@ -2,11 +2,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-Project-Management',
+  templateUrl: './Project-Management.component.html',
+  styleUrls: ['./Project-Management.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ProjectManagement implements OnInit {
   public Projects: Projects[] | null = null;
   public paginatedProjects: Projects[] = [];
   public currentPage: number = 1;
@@ -21,9 +21,6 @@ export class HomeComponent implements OnInit {
       this.totalPages = this.Projects ? Math.ceil(this.Projects.length / this.pageSize) : 0;
       this.updatePaginatedProjects();
     }, error => console.error(error));
-
-    localStorage.setItem("SelectedProjectName", "NA");
-    localStorage.setItem("SelectedProjectPK", "0");
   }
 
   updatePaginatedProjects() {
@@ -85,6 +82,14 @@ export class HomeComponent implements OnInit {
       this.updatePaginatedProjects();
     }
   }
+
+
+  selectProject(project: Projects) {
+    localStorage.setItem("SelectedProjectName", project.projectName);
+    localStorage.setItem("SelectedProjectPK", project.nW_PK.toString());
+    location.reload();
+  }
+
 }
 
 interface Projects {

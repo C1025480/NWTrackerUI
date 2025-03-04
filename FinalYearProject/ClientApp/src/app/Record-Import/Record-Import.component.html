@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>NWTracker Project Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <link rel="stylesheet" href="Record-Import.component.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+
+  <h1 class="Title"> Record-Import </h1>
+  <div class="container">
+    <h2 class="subtitle"> Instructions </h2>
+
+    <ul>
+      <li>In order to import records into the project you need to download this Template.</li>
+      <li>Once downloaded, fill in the columns of all the information required (e.g., house number, street name, and UPRN).</li>
+      <li>Save the document to a memorable location.</li>
+      <li>Click the Upload Button.</li>
+      <li>Browse to the saved location and upload the file to the webpage.</li>
+      <li>Click the Submit and Confirm Buttons.</li>
+      <li>Records will automatically be generated and placed into the commencement pending status.</li>
+      <li>If additional comments are required, find the record and edit it to add your comments.</li>
+    </ul>
+
+    <br /><button class="download-btn" (click)="downloadExcel()">Download Template</button>
+
+    <input type="file" id="excel-file" accept=".xlsx, .xls" style="display: none;" (change)="handleFile()" />
+    <button class="upload-btn" (click)="triggerFileInput()">Upload</button>
+
+    <h2 class="subtitle">Imported Data</h2>
+    <div id="table-container"></div>
+
+    <div class="pagination-container">
+      <button *ngIf="currentPage > 1" (click)="changePage(currentPage - 1)">Previous</button>
+      <button *ngIf="currentPage < totalPages" (click)="changePage(currentPage + 1)">Next</button>
+    </div>
+
+
+  </div>
+</body>
+</html>

@@ -1,6 +1,8 @@
 html {
   font-size: 14px;
   background-color: #989898;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -9,9 +11,27 @@ html {
   }
 }
 
+body {
+  padding-top: 80px;
+  margin: 0;
+}
+
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  background-color: #989898;
+}
+
+.container-fluid {
+  height: 80px;
+  padding: 0px;
+  margin: 0px;
 }
 
 a.navbar-brand {
@@ -21,7 +41,9 @@ a.navbar-brand {
   font-size: 32px;
   padding-left: 20px;
   color: white;
+  padding-bottom: 0px;
 }
+
   a.navbar-brand:hover {
     color: rebeccapurple !important;
   }
@@ -51,6 +73,7 @@ a.navbar-brand {
   .bi-gear:hover {
     color: rebeccapurple !important;
   }
+
   .bi-inbox:hover {
     color: rebeccapurple !important;
   }
@@ -58,6 +81,7 @@ a.navbar-brand {
 .nav-item {
   padding: 10px;
 }
+
 .nav-time {
   color: white !important;
   font-size: 24px;
@@ -67,21 +91,12 @@ a.navbar-brand {
   color: rebeccapurple !important;
 }
 
-
-
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 .NW {
   font-weight: 1000;
-}
-
-.container-fluid {
-  height: 80px;
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
 }
 
 .bg-white {
@@ -97,18 +112,23 @@ a.navbar-brand {
   display: flex;
   align-items: center;
 }
+
 .container {
   padding: 0px;
   margin-left: 10px;
   margin-right: 10px;
 }
-.right-side{
-    color: white;
+
+.right-side {
+  color: white;
+  padding-right: 200px;
 }
-.ProjectSelected{
-    padding-left: 60px;
-    font-size: 24px;
+
+.ProjectSelected {
+  padding-left: 60px;
+  font-size: 24px;
 }
+
 .Project {
   font-size: 18px;
   background-color: #494949;
@@ -117,4 +137,10 @@ a.navbar-brand {
   padding-right: 40px;
   width: 200px;
   margin-left: 10px;
+}
+img {
+  width: 206px;
+  height: 127px;
+  padding-left: 20px;
+  padding-right: 20px;
 }

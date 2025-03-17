@@ -20,6 +20,7 @@ import { ProjectGantt } from './Project-Gantt/Project-Gantt.component';
 import { RecordImport } from './Record-Import/Record-Import.component';
 import { Report } from './Report/Report.component';
 import { Surveys } from './Surveys/Surveys.component';
+import { Login } from './Login/Login.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +41,14 @@ import { Surveys } from './Surveys/Surveys.component';
     RecordImport,
     Report,
     Surveys,
+    Login
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: Login, pathMatch: 'full' },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'project-records-page', component: ProjectRecordsPageComponent },
       { path: 'record-edit-page', component: RecordEditPageComponent },
@@ -61,6 +63,7 @@ import { Surveys } from './Surveys/Surveys.component';
       { path: 'Record-Import', component: RecordImport },
       { path: 'Report', component: Report },
       { path: 'Surveys', component: Surveys },
+      { path: 'Login', component: Login },
     ])
   ],
   providers: [],

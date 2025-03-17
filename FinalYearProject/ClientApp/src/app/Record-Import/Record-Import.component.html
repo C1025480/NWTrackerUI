@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>NWTracker Project Page</title>
+  <title>NWTracker Record Import Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <link rel="stylesheet" href="Record-Import.component.css">
@@ -28,6 +28,8 @@
 
     <input type="file" id="excel-file" accept=".xlsx, .xls" style="display: none;" (change)="handleFile()" />
     <button class="upload-btn" (click)="triggerFileInput()">Upload</button>
+
+    <button class="upload-btn" style="background-color:indianred">Submit</button>
 
     <h2 class="subtitle">Imported Data</h2>
     <div id="table-container"></div>

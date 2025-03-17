@@ -10,9 +10,9 @@ export class Sidebar {
   public ProjectPK: string = "0";
 
   ngOnInit() {
-    const ProjectName = localStorage.getItem("SelectedProjectName");
+    const ProjectName = sessionStorage.getItem("SelectedProjectName");
     this.ProjectName = ProjectName ? ProjectName : "Not Selected";
-    const ProjectPK = localStorage.getItem("SelectedProjectPK");
+    const ProjectPK = sessionStorage.getItem("SelectedProjectPK");
     this.ProjectPK = ProjectPK ? ProjectPK : "0";
   }
 }

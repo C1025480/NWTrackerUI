@@ -28,7 +28,6 @@ Side-bar {
 }
 
 router-outlet {
-  margin-top: 95px;
   flex-grow: 1;
   z-index: 1;
 }

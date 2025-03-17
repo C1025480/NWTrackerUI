@@ -6,3 +6,39 @@
   color: #757575;
   margin-bottom: 20px;
 }
+
+th, td {
+  border: 1px solid black;
+  font-size: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+table {
+  margin-left: 40px;
+  margin-right: 80px;
+}
+
+.table-container {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+  .table-container table {
+    width: 25%;
+    min-width: 300px;
+    border-collapse: collapse;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+.purple {
+  background-color: #6E567E;
+  color: white;
+}
+.TitleDiv {
+  background-color: lightgrey;
+}

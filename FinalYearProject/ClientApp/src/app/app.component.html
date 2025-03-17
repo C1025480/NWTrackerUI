@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="app.component.css">
 </head>
 <body>
-  <app-nav-menu></app-nav-menu>
-  <Side-bar></Side-bar>
-    <router-outlet></router-outlet>
+  <app-nav-menu *ngIf="!isLoginPage"></app-nav-menu>
+  <Side-bar *ngIf="!isLoginPage"></Side-bar>
+  <router-outlet></router-outlet>
 </body>

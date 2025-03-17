@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit {
       this.updatePaginatedProjects();
     }, error => console.error(error));
 
-    localStorage.setItem("SelectedProjectName", "NA");
-    localStorage.setItem("SelectedProjectPK", "0");
+    sessionStorage.setItem("SelectedProjectName", "NA");
+    sessionStorage.setItem("SelectedProjectPK", "0");
   }
 
   updatePaginatedProjects() {

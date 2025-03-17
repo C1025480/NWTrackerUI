@@ -6,3 +6,38 @@
   color: #757575;
   margin-bottom: 20px;
 }
+.container {
+  margin-left: 10px;
+}
+.SmallBoxes{
+    margin-bottom: 15px;
+}
+
+th, td {
+  border: 1px solid black;
+  font-size: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.purple {
+  background-color: #6E567E;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.yellow {
+  background-color: #EEDC82;
+}
+.empty{
+    border:none;
+    height: 20px;
+}
+.TitleDiv {
+  background-color: lightgrey;
+  padding-right: 100px;
+}
+.currentDate {
+  width: 200px;
+  background-color: #6E567E;
+  color: white;
+}

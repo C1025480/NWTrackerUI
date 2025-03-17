@@ -85,8 +85,8 @@ export class ProjectManagement implements OnInit {
 
 
   selectProject(project: Projects) {
-    localStorage.setItem("SelectedProjectName", project.projectName);
-    localStorage.setItem("SelectedProjectPK", project.nW_PK.toString());
+    sessionStorage.setItem("SelectedProjectName", project.projectName);
+    sessionStorage.setItem("SelectedProjectPK", project.nW_PK.toString());
     location.reload();
   }
 

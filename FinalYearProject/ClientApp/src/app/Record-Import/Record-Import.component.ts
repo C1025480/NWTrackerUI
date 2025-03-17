@@ -8,7 +8,6 @@ import * as XLSX from 'xlsx';
 })
 export class RecordImport {
 
-  // Pagination variables
   currentPage: number = 1;
   recordsPerPage: number = 10;
   totalPages: number = 1;

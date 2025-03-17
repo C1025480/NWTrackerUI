@@ -38,7 +38,7 @@ export class NavMenuComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.updateClock();
     this.timer = setInterval(() => this.updateClock(), 1000);
-    const selectedProjectName = localStorage.getItem("SelectedProjectName");
+    const selectedProjectName = sessionStorage.getItem("SelectedProjectName");
     this.ProjectName = selectedProjectName ? selectedProjectName : "Not Selected";
   }
 
